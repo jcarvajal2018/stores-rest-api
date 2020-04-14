@@ -50,7 +50,7 @@ class Item(Resource):
 
     def put(self,name):
         data = Item.parser.parse_args()  #aqui viene el precio dado por el json
-            item = ItemModel.find_by_name(name) #en item quedan los datos del registro actual
+        item = ItemModel.find_by_name(name) #en item quedan los datos del registro actual
         if item is None:
             item = ItemModel(name, **data)
         else:
